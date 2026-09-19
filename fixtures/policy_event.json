@@ -1,0 +1,9 @@
+{
+  "event_id": "fed-2026-09-16",
+  "expected_basis_points": 25,
+  "actual_basis_points": 25,
+  "expectation_frozen_at": "2026-09-16T13:30:00-04:00",
+  "observations": [
+    {"market": "spot_gold", "value": 4300, "currency": "USD", "unit": "ounce"}
+  ]
+}
