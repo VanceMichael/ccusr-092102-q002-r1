@@ -1,0 +1,139 @@
+{
+  "event": {
+    "event_id": "fed-2026-09-16",
+    "title": "美联储 2026 年 9 月议息会议",
+    "policy_body": "Federal Reserve",
+    "scheduled_at": "2026-09-16T14:00:00-04:00",
+    "freeze_at": "2026-09-16T13:30:00-04:00"
+  },
+  "freeze_at": "2026-09-16T13:30:00-04:00",
+  "expectations": [
+    {"ref": "exp:fw_hike25", "source": "FedWatch", "source_version": "2026-09-16T13:00",
+     "outcome": "hike25", "probability": 0.92,
+     "collected_at": "2026-09-16T13:00:00-04:00"},
+    {"ref": "exp:fw_hold", "source": "FedWatch", "source_version": "2026-09-16T13:00",
+     "outcome": "hold", "probability": 0.07,
+     "collected_at": "2026-09-16T13:00:00-04:00"},
+    {"ref": "exp:dealer_hike25", "source": "primary-dealer-survey", "source_version": "2026-09-15",
+     "outcome": "hike25", "probability": 0.95,
+     "collected_at": "2026-09-15T17:00:00-04:00"},
+    {"ref": "exp:dealer_hike50", "source": "primary-dealer-survey", "source_version": "2026-09-15",
+     "outcome": "hike50", "probability": 0.05,
+     "collected_at": "2026-09-15T17:00:00-04:00"}
+  ],
+  "decisions": [
+    {"ref": "dec:statement", "action": "hike", "basis_points": 25,
+     "statement_summary": "联邦基金利率上调 25 个基点至目标区间上限；声明保留对通胀粘性的警惕措辞。",
+     "decided_at": "2026-09-16T14:00:00-04:00",
+     "source": "Federal Reserve", "source_version": "statement-2026-09-16"},
+    {"ref": "dec:statement_erratum", "action": "hike", "basis_points": 25,
+     "statement_summary": "官方勘误：利率目标区间表述修订，加息幅度仍为 25 个基点，政策路径措辞不变。",
+     "decided_at": "2026-09-16T14:00:00-04:00",
+     "source": "Federal Reserve", "source_version": "statement-2026-09-16-erratum",
+     "replaces_ref": "dec:statement"}
+  ],
+  "observations": [
+    {"ref": "obs:spot_dip", "series": "spot_gold", "label": "LBMA 现货金·公布后瞬时低点",
+     "value": 4281.5, "currency": "USD", "unit": "ounce", "market_tz": "America/New_York",
+     "observed_at": "2026-09-16T14:05:00-04:00", "collected_at": "2026-09-16T14:06:00-04:00",
+     "source": "LBMA", "source_version": "tick-1405"},
+    {"ref": "obs:spot_dip_rev", "series": "spot_gold", "label": "LBMA 现货金·公布后瞬时低点",
+     "value": 4284.2, "currency": "USD", "unit": "ounce", "market_tz": "America/New_York",
+     "observed_at": "2026-09-16T14:05:00-04:00", "collected_at": "2026-09-16T16:00:00-04:00",
+     "source": "LBMA", "source_version": "tick-1405-corrected",
+     "replaces_ref": "obs:spot_dip",
+     "payload": {"修订原因": "数据商对瞬时成交做了成交剔除更正"}},
+    {"ref": "obs:spot_recover", "series": "spot_gold", "label": "LBMA 现货金·尾盘收复",
+     "value": 4302.0, "currency": "USD", "unit": "ounce", "market_tz": "America/New_York",
+     "observed_at": "2026-09-16T15:30:00-04:00", "collected_at": "2026-09-16T15:31:00-04:00",
+     "source": "LBMA", "source_version": "tick-1530"},
+    {"ref": "obs:futures_break", "series": "gold_futures", "label": "COMEX 纽约期金主力合约",
+     "value": 4408.0, "currency": "USD", "unit": "ounce", "market_tz": "America/New_York",
+     "observed_at": "2026-09-17T10:00:00-04:00", "collected_at": "2026-09-17T10:01:00-04:00",
+     "source": "CME", "source_version": "sess-2026-09-17"},
+    {"ref": "obs:dxy", "series": "dollar_index", "label": "DXY 美元指数·会议后两小时窗口",
+     "value": -0.6, "currency": null, "unit": "percent_change", "market_tz": "America/New_York",
+     "observed_at": "2026-09-16T16:00:00-04:00", "collected_at": "2026-09-16T16:05:00-04:00",
+     "source": "ICE", "source_version": "window-1400-1600"},
+    {"ref": "obs:real_yield", "series": "real_yield", "label": "10 年期 TIPS 实际利率·会议日收盘变动",
+     "value": -7.0, "currency": null, "unit": "bps", "market_tz": "America/New_York",
+     "observed_at": "2026-09-16T16:00:00-04:00", "collected_at": "2026-09-16T16:10:00-04:00",
+     "source": "US Treasury", "source_version": "2026-09-16-close"},
+    {"ref": "obs:etf_gld", "series": "etf_holdings", "label": "SPDR GLD 持仓（伦敦时区披露）",
+     "value": 912.4, "currency": null, "unit": "tonne", "market_tz": "Europe/London",
+     "observed_at": "2026-09-16T00:00:00+01:00", "collected_at": "2026-09-17T08:15:00+01:00",
+     "source": "SPDR Gold Shares", "source_version": "holdings-2026-09-16",
+     "payload": {"较上日变动_tonne": 3.8}},
+    {"ref": "obs:cb_purchase", "series": "central_bank_purchase", "label": "新兴市场央行 8 月净购金",
+     "value": 44.0, "currency": null, "unit": "tonne", "market_tz": "UTC",
+     "observed_at": "2026-08-31T00:00:00+00:00", "collected_at": "2026-09-15T09:00:00+00:00",
+     "source": "世界黄金协会", "source_version": "2026-09-demand-trends",
+     "payload": {"公布节奏": "月度，滞后约两周"}},
+    {"ref": "obs:geo_risk", "series": "risk_material", "label": "中东航运风险升级通报",
+     "value": null, "currency": null, "unit": null, "market_tz": "Asia/Singapore",
+     "observed_at": "2026-09-17T09:20:00+08:00", "collected_at": "2026-09-17T09:25:00+08:00",
+     "source": "机构地缘晨报", "source_version": "brief-2026-09-17",
+     "payload": {"风险类型": "地缘", "定性描述": "航运保险费率跳升，避险需求升温"}},
+    {"ref": "obs:fiscal_credit", "series": "risk_material", "label": "长期财政赤字与主权信用材料",
+     "value": null, "currency": null, "unit": null, "market_tz": "America/New_York",
+     "observed_at": "2026-09-15T12:00:00-04:00", "collected_at": "2026-09-15T12:30:00-04:00",
+     "source": "CBO 与评级机构摘录", "source_version": "2026-09-fiscal-pack",
+     "payload": {"风险类型": "财政信用", "定性描述": "赤字路径与利息负担支撑央行储备多元化叙事"}}
+  ],
+  "analyses": [
+    {
+      "team": "macro",
+      "title": "加息落地后的黄金韧性：提前定价、实际利率与资金流入的共振",
+      "body": "25bp 加息与公布前九成以上的隐含概率一致，利率冲击在会前已被消化；会议后实际利率回落、美元走弱，叠加 ETF 与央行购金的结构性买盘，使现货金短跌后收复 4300、纽约期金次日突破 4400。单一利率渠道无法解释价格形态。",
+      "claims": [
+        {"text": "加息 25bp 基本兑现公布前 92% 的隐含概率与一级交易商 95% 的预期，意外成分接近于零，利率冲击被提前定价。",
+         "evidence": [
+           {"kind": "supporting", "ref": "exp:fw_hike25"},
+           {"kind": "supporting", "ref": "exp:dealer_hike25"},
+           {"kind": "supporting", "ref": "dec:statement_erratum"}]},
+        {"text": "会议后两小时美元指数下行 0.6%、10 年期 TIPS 实际利率回落 7bp，实际利率渠道方向支持金价，但幅度不足以单独解释期金 4400 的突破。",
+         "evidence": [
+           {"kind": "supporting", "ref": "obs:dxy"},
+           {"kind": "supporting", "ref": "obs:real_yield"},
+           {"kind": "uncertainty", "ref": "obs:futures_break",
+            "note": "单日突破中的风险溢价权重无法从利率窗口分离"}]},
+        {"text": "ETF 持仓续增与央行月度净购金构成利率不敏感的结构性买盘，是价格韧性的底层支撑。",
+         "evidence": [
+           {"kind": "supporting", "ref": "obs:etf_gld"},
+           {"kind": "supporting", "ref": "obs:cb_purchase"},
+           {"kind": "uncertainty", "ref": "obs:etf_gld",
+            "note": "ETF 为 T+1 伦敦时区披露，无法确认会议当日盘中流入的确切时点"}]},
+        {"text": "瞬时下探被快速更正后的低点 4284 与尾盘 4302 并存，机械的“加息利空黄金”叙述与 V 型修复相矛盾。",
+         "evidence": [
+           {"kind": "contradicting", "ref": "obs:spot_dip_rev",
+            "note": "若利率主导，短跌不应在两小时内完全收复"},
+           {"kind": "supporting", "ref": "obs:spot_recover"}]}
+      ]
+    },
+    {
+      "team": "geopolitics",
+      "title": "竞争解释：地缘与财政信用溢价才是期金突破的边际推手",
+      "body": "利率与美元只能解释金价的温和支撑；纽约期金在次日亚洲时段突破 4400，时间上更贴近地缘风险升级，叠加强化的财政信用担忧，避险与储备多元化溢价才是边际推手。该解释与宏观组的“资金流共振”解释相互竞争，证据尚不足以排他。",
+      "claims": [
+        {"text": "期金突破发生在次日亚洲早盘，与地缘晨报时点吻合，而利率信息在会议当时已释放，时间证据偏向风险溢价驱动。",
+         "evidence": [
+           {"kind": "supporting", "ref": "obs:geo_risk"},
+           {"kind": "supporting", "ref": "obs:futures_break"},
+           {"kind": "contradicting", "ref": "obs:real_yield",
+            "note": "若实际利率是唯一推手，突破不应滞后近 20 小时"}]},
+        {"text": "财政赤字与主权信用材料强化储备多元化叙事，与央行持续购金互相强化，但月度购金数据存在发布滞后，难以证明其在本次窗口边际增持。",
+         "evidence": [
+           {"kind": "supporting", "ref": "obs:fiscal_credit"},
+           {"kind": "supporting", "ref": "obs:cb_purchase"},
+           {"kind": "uncertainty", "ref": "obs:cb_purchase",
+            "note": "8 月数据 9 月才披露，与 9 月 16-17 日行情的因果联系是推断而非观测"}]},
+        {"text": "美元走弱与实际利率回落同样能产生该价格形态，因此地缘解释目前不能排除宏观解释，二者可能同时成立。",
+         "evidence": [
+           {"kind": "contradicting", "ref": "obs:dxy"},
+           {"kind": "contradicting", "ref": "obs:real_yield"},
+           {"kind": "uncertainty", "ref": "obs:spot_recover",
+            "note": "现货收复发生在地缘晨报之前，部分削弱纯地缘叙事"}]}
+      ]
+    }
+  ]
+}
